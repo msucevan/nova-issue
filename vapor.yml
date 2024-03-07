@@ -1,10 +1,12 @@
-id: 58732
+id: 58733
 name: nova-issue
 environments:
     production:
         memory: 1024
         cli-memory: 512
         runtime: 'php-8.2:al2'
+        database: nova-issue
+        octane: true
         build:
             - 'COMPOSER_MIRROR_PATH_REPOS=1 composer install --no-dev'
             - 'php artisan event:cache'
